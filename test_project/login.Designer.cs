@@ -44,7 +44,7 @@
             this.login_btn.TabIndex = 1;
             this.login_btn.Text = "Войти";
             this.login_btn.UseVisualStyleBackColor = true;
-            this.login_btn.Click += new System.EventHandler(this.button2_Click);
+            this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
             // username_txtbx
             // 
@@ -68,7 +68,6 @@
             this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Имя пользователя";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -100,8 +99,7 @@
             this.Controls.Add(this.username_txtbx);
             this.Controls.Add(this.login_btn);
             this.Name = "Form1";
-            this.Text = "a";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
