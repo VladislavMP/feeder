@@ -100,7 +100,7 @@
             this.Controls.Add(this.username_txtbx);
             this.Controls.Add(this.login_btn);
             this.Name = "Form1";
-            this.Text = "login";
+            this.Text = "a";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
