@@ -125,6 +125,7 @@
             this.Controls.Add(this.label1);
             this.Name = "home_user";
             this.Text = "home_user";
+            this.Load += new System.EventHandler(this.home_user_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
