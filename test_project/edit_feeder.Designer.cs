@@ -70,12 +70,13 @@
             // 
             // back_btn
             // 
-            this.back_btn.Location = new System.Drawing.Point(26, 394);
+            this.back_btn.Location = new System.Drawing.Point(26, 399);
             this.back_btn.Name = "back_btn";
             this.back_btn.Size = new System.Drawing.Size(94, 29);
             this.back_btn.TabIndex = 4;
             this.back_btn.Text = "Назад";
             this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // edit_feeder
             // 

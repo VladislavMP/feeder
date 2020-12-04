@@ -57,6 +57,7 @@
             this.back_btn.TabIndex = 2;
             this.back_btn.Text = "Назад";
             this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // add_feeder
             // 
@@ -68,6 +69,7 @@
             this.Controls.Add(this.add_feeder_txtbx);
             this.Name = "add_feeder";
             this.Text = "add_feeder";
+            this.Load += new System.EventHandler(this.add_feeder_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

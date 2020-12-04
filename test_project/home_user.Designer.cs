@@ -91,6 +91,7 @@
             this.add_feeder_btn.TabIndex = 5;
             this.add_feeder_btn.Text = "Добавить кормушку";
             this.add_feeder_btn.UseVisualStyleBackColor = true;
+            this.add_feeder_btn.Click += new System.EventHandler(this.add_feeder_btn_Click);
             // 
             // manage_timetables_btn
             // 
@@ -100,6 +101,7 @@
             this.manage_timetables_btn.TabIndex = 6;
             this.manage_timetables_btn.Text = "Редактировать расписания";
             this.manage_timetables_btn.UseVisualStyleBackColor = true;
+            this.manage_timetables_btn.Click += new System.EventHandler(this.manage_timetables_btn_Click);
             // 
             // quit_btn
             // 
@@ -109,6 +111,7 @@
             this.quit_btn.TabIndex = 7;
             this.quit_btn.Text = "Выйти";
             this.quit_btn.UseVisualStyleBackColor = true;
+            this.quit_btn.Click += new System.EventHandler(this.quit_btn_Click);
             // 
             // home_user
             // 

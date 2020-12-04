@@ -48,7 +48,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.change_btn, 3, 0);
@@ -75,7 +75,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(105, 0);
+            this.label2.Location = new System.Drawing.Point(104, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 2;
@@ -83,7 +83,7 @@
             // 
             // change_btn
             // 
-            this.change_btn.Location = new System.Drawing.Point(388, 3);
+            this.change_btn.Location = new System.Drawing.Point(386, 3);
             this.change_btn.Name = "change_btn";
             this.change_btn.Size = new System.Drawing.Size(94, 29);
             this.change_btn.TabIndex = 1;
@@ -92,7 +92,7 @@
             // 
             // toggle_btn
             // 
-            this.toggle_btn.Location = new System.Drawing.Point(247, 3);
+            this.toggle_btn.Location = new System.Drawing.Point(245, 3);
             this.toggle_btn.Name = "toggle_btn";
             this.toggle_btn.Size = new System.Drawing.Size(94, 29);
             this.toggle_btn.TabIndex = 3;
@@ -101,7 +101,7 @@
             // 
             // delete_btn
             // 
-            this.delete_btn.Location = new System.Drawing.Point(608, 3);
+            this.delete_btn.Location = new System.Drawing.Point(606, 3);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(94, 29);
             this.delete_btn.TabIndex = 4;
@@ -110,7 +110,7 @@
             // 
             // export_btn
             // 
-            this.export_btn.Location = new System.Drawing.Point(497, 3);
+            this.export_btn.Location = new System.Drawing.Point(495, 3);
             this.export_btn.Name = "export_btn";
             this.export_btn.Size = new System.Drawing.Size(94, 29);
             this.export_btn.TabIndex = 5;
@@ -125,6 +125,7 @@
             this.back_btn.TabIndex = 1;
             this.back_btn.Text = "Назад";
             this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // import_btn
             // 
@@ -145,6 +146,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "manage_timetables";
             this.Text = "manage_timetables";
+            this.Load += new System.EventHandler(this.manage_timetables_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
