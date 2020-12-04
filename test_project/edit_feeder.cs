@@ -10,9 +10,15 @@ namespace test_project
 {
     public partial class edit_feeder : Form
     {
+
         public edit_feeder()
         {
             InitializeComponent();
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            //Show_goback?.Invoke();
         }
     }
 }

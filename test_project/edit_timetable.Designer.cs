@@ -106,6 +106,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "edit_timetable";
             this.Text = "edit_timetable";
+            this.Load += new System.EventHandler(this.edit_timetable_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
