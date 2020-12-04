@@ -8,7 +8,8 @@ namespace Presenter
 
     public interface Ilogin : Iview
     {
-        event Action Show_home_user;
+
+        event Action<string> Show_home_user;
 
 
     }
