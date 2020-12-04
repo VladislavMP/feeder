@@ -15,7 +15,7 @@ namespace test_project
     {
         private readonly ApplicationContext _context;
 
-        public event Action Show_home_user;
+        public event Action<string> Show_home_user;
 
         public Form1(ApplicationContext context)
         {
@@ -25,12 +25,17 @@ namespace test_project
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            Show_home_user?.Invoke();
+            Show_home_user?.Invoke(password_txtbx.Text);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void password_txtbx_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
