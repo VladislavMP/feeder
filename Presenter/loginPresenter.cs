@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using Model;
 using Ninject;
 
 namespace Presenter
@@ -10,22 +11,30 @@ namespace Presenter
     {
         private readonly IKernel _kernel;
         private Ilogin _view;
+        private IAuthService _authservice;
 
 
-        public loginPresenter(IKernel kernel, Ilogin view)
+        public loginPresenter(IKernel kernel, Ilogin view, IAuthService authservice)
         {
             _kernel = kernel;
             _view = view;
+            _authservice = authservice;
 
-            _view.Show_home_user += Show_home_user;
+            _view.Show_login += Show_login;
         }
 
-        private void Show_home_user(string password)
+        private void Show_login(string username, string password)
         {
-            
-            if (password == "test")
+            short user_type = _authservice.Login(username, password);
+            if (user_type == 1)
             {
                 var presenter = _kernel.Get<home_userPresenter>();
+                presenter.Run();
+                _view.Close();
+            }
+            else if (user_type == 2)
+            {
+                var presenter = _kernel.Get<home_adminPresenter>();
                 presenter.Run();
                 _view.Close();
             }

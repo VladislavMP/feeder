@@ -9,9 +9,8 @@ namespace Model.Service
     public class FeederService : IFeederService
     {
         private IRepository<Timetable> _repository; // !!!!!!!! WRONG REPOSITORY !!!!!!! ONLY FOR DEMONSTRATION PURPOSES !!!!!!!
-        public FeederService(IRepository<Timetable> repository)
+        public FeederService() //check for repository injection
         {
-            _repository = repository;
         }
 
         public void Add_feeder(string id)
