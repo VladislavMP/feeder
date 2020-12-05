@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
+using Model.Entity;
+using Model.Repository;
 using Model.Service;
 using Ninject;
 using Presenter;
@@ -30,6 +32,9 @@ namespace test_project
 
             kernel.Bind<IFeederService>().To<FeederService>();
             kernel.Bind<IAuthService>().To<AuthService>();
+
+            kernel.Bind<IRepository<User>>().To<UserRepository>();
+            kernel.Bind<IRepository<Timetable>>().To<TimetableRepository>();
 
             //Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();

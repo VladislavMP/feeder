@@ -32,11 +32,17 @@ namespace Model.Repository
         {
             return _data.Find(c => c.Id == id);
         }
+
+        public Timetable Get(string id)
+        {
+            throw new NotImplementedException();
+        }
+
         /*       public List<Timetable> GetAll()
-               {
-                   string connStr = "server=localhost;user=root;database=Timetable;password=root";
-                   List<Timetable> timetables;
-                   return timetables;
-               }*/
+      {
+          string connStr = "server=localhost;user=root;database=Timetable;password=root";
+          List<Timetable> timetables;
+          return timetables;
+      }*/
     }
 }

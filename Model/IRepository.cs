@@ -10,6 +10,8 @@ namespace Model
         void Remove(int id);
         void Save();
 
+        T Get(string id);
+
     }
 }
 

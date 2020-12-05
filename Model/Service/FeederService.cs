@@ -8,7 +8,6 @@ namespace Model.Service
 {
     public class FeederService : IFeederService
     {
-        private IRepository<Timetable> _repository; // !!!!!!!! WRONG REPOSITORY !!!!!!! ONLY FOR DEMONSTRATION PURPOSES !!!!!!!
         public FeederService() //check for repository injection
         {
         }

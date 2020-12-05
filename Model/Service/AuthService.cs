@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Entity;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,17 +7,23 @@ namespace Model.Service
 {
     public class AuthService : IAuthService
     {
+        private IRepository<User> _userrepository;
+        public AuthService(IRepository<User> userrepository)
+        {
+            _userrepository = userrepository;
+        }
         public short Login(string username, string password)
         {
-            if (username == "admin" && password == "admin")
+            User user = _userrepository.Get(username);
+            if (user.id == "0")
             {
-                return 2; //admin
+                return 0; 
             }
-            else if (username == "test" && password == "test")
+            else if (user.password == password)
             {
-                return 1; //normal user
+                return user.account_type; 
             }
-            return 0; //access denied
+            return 0; 
         }
     }
 }
