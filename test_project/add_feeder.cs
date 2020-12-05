@@ -12,6 +12,7 @@ namespace test_project
     public partial class add_feeder : Form, Iadd_feeder
     {
         public event Action Show_goback;
+        public event Action<string> Add_feeder;
         private readonly ApplicationContext _context;
         public add_feeder(ApplicationContext context)
         {
@@ -27,6 +28,16 @@ namespace test_project
         private void back_btn_Click(object sender, EventArgs e)
         {
             Show_goback?.Invoke();
+        }
+
+        private void add_feeder_btn_Click(object sender, EventArgs e)
+        {
+            Add_feeder?.Invoke(add_feeder_txtbx.Text);
+        }
+
+        private void add_feeder_txtbx_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

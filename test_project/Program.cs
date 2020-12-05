@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
+using Model.Service;
 using Ninject;
 using Presenter;
 
@@ -23,6 +25,7 @@ namespace test_project
             kernel.Bind<Iadd_feeder>().To<add_feeder>();
             kernel.Bind<Imanage_timetables>().To<manage_timetables>();
             kernel.Bind<Iedit_timetable>().To<edit_timetable>();
+            kernel.Bind<IFeederService>().To<FeederService>();
 
             //Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();

@@ -39,6 +39,7 @@
             this.add_feeder_txtbx.Name = "add_feeder_txtbx";
             this.add_feeder_txtbx.Size = new System.Drawing.Size(145, 27);
             this.add_feeder_txtbx.TabIndex = 0;
+            this.add_feeder_txtbx.TextChanged += new System.EventHandler(this.add_feeder_txtbx_TextChanged);
             // 
             // add_feeder_btn
             // 
@@ -48,6 +49,7 @@
             this.add_feeder_btn.TabIndex = 1;
             this.add_feeder_btn.Text = "Добавить";
             this.add_feeder_btn.UseVisualStyleBackColor = true;
+            this.add_feeder_btn.Click += new System.EventHandler(this.add_feeder_btn_Click);
             // 
             // back_btn
             // 
