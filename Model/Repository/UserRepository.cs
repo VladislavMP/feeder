@@ -4,6 +4,18 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
+/*
+
+            MySqlConnection conn = new MySqlConnection("server=localhost;user=root;password=root;database=feeder_db;");
+            conn.Open();
+            MySqlCommand command = new MySqlCommand("SELECT user_id FROM users WHERE user_type = 1", conn);
+            string test = command.ExecuteScalar().ToString();
+            Console.WriteLine(test);
+            Console.ReadLine();
+            conn.Close();
+            MessageBox.Show(test, "Notification", MessageBoxButtons.OK);
+*/
+
 namespace Model.Repository
 {
     public class UserRepository : IRepository<User>

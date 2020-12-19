@@ -39,7 +39,7 @@ namespace Presenter
                 _view.Close();
             }
             else
-            MessageBox.Show("не пущу", "Notification", MessageBoxButtons.OK);
+            MessageBox.Show("не пущу", "Notification", MessageBoxButtons.OK); //вынести в view
         }
 
         public void Run()
