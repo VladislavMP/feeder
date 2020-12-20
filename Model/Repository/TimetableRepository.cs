@@ -13,15 +13,15 @@ namespace Model.Repository
 
         public int Add(Timetable obj)
         {
-            obj.Id = _end_index;
-            _end_index += 1;
-            _data.Add(obj);
-            return obj.Id;
+            //obj.Id = _end_index;
+            //_end_index += 1;
+            //_data.Add(obj);
+            return 0;
         }
 
         public void Remove(int id)
         {
-            _data.RemoveAll(c => c.Id == id);
+           // _data.RemoveAll(c => c.Id == id);
         }
 
         public void Save()
@@ -30,7 +30,8 @@ namespace Model.Repository
 
         public Timetable Find(int id)
         {
-            return _data.Find(c => c.Id == id);
+            //  return _data.Find(c => c.Id == id);
+            return null;
         }
 
         public Timetable Get(string id)
