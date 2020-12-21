@@ -20,7 +20,7 @@ namespace Model.Repository
 {
     public class UserRepository : IRepository<User>
     {
-        public int Add(User obj)
+        public string Add(User obj)
         {
             throw new NotImplementedException();
         }
@@ -48,7 +48,12 @@ namespace Model.Repository
             return user;
         }
 
-        public void Remove(int id)
+        public List<User> GetAll(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(string id)
         {
             throw new NotImplementedException();
         }
@@ -57,5 +62,6 @@ namespace Model.Repository
         {
             throw new NotImplementedException();
         }
+
     }
 }

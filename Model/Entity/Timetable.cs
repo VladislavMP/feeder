@@ -9,7 +9,7 @@ namespace Model.Entity
         private List<Time> TimeOfFeed;
         private string FeederId;
         private string name;
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public void Add_Time(Time t)
         {

@@ -35,6 +35,7 @@ namespace test_project
 
             kernel.Bind<IRepository<User>>().To<UserRepository>();
             kernel.Bind<IRepository<Timetable>>().To<TimetableRepository>();
+            kernel.Bind<IRepository<Feeder>>().To<FeederRepository>();
 
             //Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();

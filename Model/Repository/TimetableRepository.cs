@@ -11,15 +11,15 @@ namespace Model.Repository
         private static List<Timetable> _data = new List<Timetable>();
         private static int _end_index = 0;
 
-        public int Add(Timetable obj)
+        public string Add(Timetable obj)
         {
-            obj.Id = _end_index;
-            _end_index += 1;
-            _data.Add(obj);
+            obj.Id = "zero"; //генерация айди и запись элементов
+            //_end_index += 1;
+            //_data.Add(obj);
             return obj.Id;
         }
 
-        public void Remove(int id)
+        public void Remove(string id)
         {
             _data.RemoveAll(c => c.Id == id);
         }
@@ -28,12 +28,22 @@ namespace Model.Repository
         {
         }
 
-        public Timetable Find(int id)
+        public Timetable Find(string id)
         {
             return _data.Find(c => c.Id == id);
         }
 
         public Timetable Get(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Timetable> IRepository<Timetable>.GetAll(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IRepository<Timetable>.Add(Timetable obj)
         {
             throw new NotImplementedException();
         }
