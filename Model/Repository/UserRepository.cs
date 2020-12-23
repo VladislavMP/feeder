@@ -23,51 +23,70 @@ namespace Model.Repository
     {
         private DB DataContext = new DB();
         private User user;
-        public int Add(User obj)
-        {
-            return 0;
-        }
 
         public User Get(string username)
         {
             DataTable table = new DataTable();
-            table = DataContext.Find("users", username);
+            string com = "user_id= '" + username + "'";
+            table = DataContext.Find("users", com);
             User user = new User();
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)
                 {
                     var cells = row.ItemArray;
-                    user.id = cells[0].ToString();
- //                   user.account_type = (short)cells[1];
+                    user.password_hash = cells[0].ToString();
+                    user.account_type = (short)cells[1];
                     user.username = cells[2].ToString();
-                    user.password = cells[3].ToString();
+                    user.password_salt = cells[3].ToString();
                 }
             }
             else return null;
-            user.username = username;
+            /*user.username = username;
             if (username == "admin")
             {
-                user.id = "j32jf22";
-                user.password = "admin"; //тут должно быть хэширование
+                user.password_hash = "j32jf22";
+                user.password_salt = "admin"; //тут должно быть хэширование
                 user.account_type = 2;
             }
             else if (username == "test")
             {
-                user.id = "jfs8fds3";
-                user.password = "test"; 
+                user.password_hash = "jfs8fds3";
+                user.password_salt = "test"; 
                 user.account_type = 1;
             }
             else
             {
-                user.id = "0";
-            }
+                user.password_hash = "0";
+            }*/
             return user;
         }
 
-        public void Remove(int id)
+        public void Remove(User obj)
         {
-            throw new NotImplementedException();
+            string username = obj.username;
+            string com = "user_id = '" + username + "'";
+            DataContext.Delete("users", com);
+        }
+        public int Add(User obj)
+        {
+            string username = obj.username;
+            short account_type = obj.account_type;
+            string password_hash = obj.password_hash;
+            string password_salt = obj.password_salt;
+            string com = "('" + username + "', '" + account_type + "', '" + password_hash + "', '" +password_salt + "')";
+            DataContext.Add("users", com);
+            return 0;
+        }
+        public void Update(User obj, string cond)
+        {
+            string username = obj.username;
+            short account_type = obj.account_type;
+            string password_hash = obj.password_hash;
+            string password_salt = obj.password_salt;
+            string com = "user_id = '" + username + "', user_type = '" + account_type + "', user_password_hash = '" 
+                + password_hash + "', user_password_salt = '" + password_salt + "'";
+            DataContext.Update("users", com, cond);
         }
 
         public void Save()

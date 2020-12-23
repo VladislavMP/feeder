@@ -33,9 +33,10 @@ namespace Model
              if (table.Rows.Count > 1)
                  MessageBox.Show("Yes");
              else MessageBox.Show("No"); */
-            //UserRepository R = new UserRepository();
-            //User user = R.Get("user_id = 2");
-            //MessageBox.Show(user.password);
+            UserRepository R = new UserRepository();
+            //R.Remove("r");
+            //MessageBox.Show(user.password_hash);
+
         }
     }
 }

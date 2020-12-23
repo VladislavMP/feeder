@@ -19,7 +19,7 @@ namespace Model.Repository
             return 0;
         }
 
-        public void Remove(int id)
+        public void Remove(Timetable obj)
         {
            // _data.RemoveAll(c => c.Id == id);
         }

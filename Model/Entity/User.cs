@@ -6,9 +6,9 @@ namespace Model.Entity
 {
     public class User
     {
-        public string id { get; set; }
+        public string password_hash { get; set; }
         public string username { get; set; }
-        public string password { get; set; }
+        public string password_salt { get; set; }
         public short account_type { get; set; }
     }
 }
