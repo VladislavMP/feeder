@@ -7,8 +7,8 @@ namespace Model
 {
     public interface IRepository<T> where T : class
     {
-        string Add(T obj);
-        void Remove(string id);
+        int Add(T obj);
+        void Remove(T obj);
         void Save();
 
         List<T> GetAll(string id);

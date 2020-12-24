@@ -8,11 +8,16 @@ namespace Model.Entity
     {
         public Feeder(string quickid, string quickname)
         {
-            Id = quickid;
+            Feeder_id = quickid;
             Name = quickname;
+            Timetable_id = null;
+            User_id = null;
         }
 
-        public string Id;
+
+        public string User_id;
+        public string Feeder_id;
+        public string Timetable_id;
         public string Name;
     }
 }

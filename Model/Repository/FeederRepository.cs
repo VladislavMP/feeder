@@ -1,40 +1,88 @@
-﻿using Model.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Model.Entity;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Model.Repository
 {
     public class FeederRepository : IRepository<Feeder>
     {
-        public string Add(Feeder obj)
+        private DB DataContext = new DB();
+        public int Add(Feeder obj)
         {
-            throw new NotImplementedException();
+            return 0;
         }
-
-        public void Remove(string id)
+        public void Remove(Feeder obj)
         {
-            throw new NotImplementedException();
-        }
 
+        }
         public void Save()
         {
-            throw new NotImplementedException();
         }
-
-        public List<Feeder> GetAll(string id) //id это имя пользователя
+        public Feeder Get(string Feeder_id)
         {
-            List<Feeder> feederlist = new List<Feeder>();
-            feederlist.Add(new Feeder("f7js8kf8", "Кормушечка №1"));
-            feederlist.Add(new Feeder("j7sa03j4", "Кормушечка №2"));
-            feederlist.Add(new Feeder("092mr90d", "Третья кормушка"));
-            feederlist.Add(new Feeder("89hx2esh", "Опа четвёртая"));
-            return feederlist;
+            DataTable table = new DataTable();
+            string com = "feeder_id= '" + Feeder_id + "'";
+            table = DataContext.Find("feeders", com);
+            Feeder feeder = new Feeder();
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    var cells = row.ItemArray;
+                    feeder.User_id = cells[1].ToString();
+                    feeder.Feeder_id = cells[0].ToString();
+                    feeder.Timetable_id = cells[2].ToString();
+                    feeder.Name = cells[3].ToString();
+                }
+            }
+            else return null;
+            return feeder;
         }
-
-        public Feeder Get(string id)
+        public List<Feeder> GetAll()
         {
-            throw new NotImplementedException();
+            DataTable table = new DataTable();
+            table = DataContext.GetAll("feeders");
+            List<Feeder> feederList = new List<Feeder>();
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    Feeder feeder = new Feeder();
+                    var cells = row.ItemArray;
+                    feeder.User_id = cells[1].ToString();
+                    feeder.Feeder_id = cells[0].ToString();
+                    feeder.Timetable_id = cells[2].ToString();
+                    feeder.Name = cells[3].ToString();
+                    feederList.Add(feeder);
+                }
+            }
+            else return null;
+            return feederList;
+        }
+        public List<Feeder> GetList(string Feeder_id)
+        {
+            DataTable table = new DataTable();
+            string com = "feeder_id= '" + Feeder_id + "'";
+            table = DataContext.Find("feeders", com);
+            List<Feeder> feederList = new List<Feeder>();
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    Feeder feeder = new Feeder();
+                    var cells = row.ItemArray;
+                    feeder.User_id = cells[1].ToString();
+                    feeder.Feeder_id = cells[0].ToString();
+                    feeder.Timetable_id = cells[2].ToString();
+                    feeder.Name = cells[3].ToString();
+                    feederList.Add(feeder);
+                }
+            }
+            else return null;
+            return feederList;
         }
     }
 }

@@ -18,11 +18,11 @@ namespace Model.Service
         public short Login(string username, string password)
         {
             User user = _userrepository.Get(username);
-            if (user.id == "0")
+            if (user == null)
             {
                 return 0; 
             }
-            else if (user.password == password)
+            else if (user.password_salt == password)
             {
                 return user.account_type; 
             }
