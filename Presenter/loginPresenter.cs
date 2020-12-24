@@ -21,6 +21,14 @@ namespace Presenter
             _authservice = authservice;
 
             _view.Show_login += Show_login;
+            _view.Show_register_screen += Show_register_screen;
+        }
+
+        private void Show_register_screen()
+        {
+            var presenter = _kernel.Get<reg_screenPresenter>();
+            presenter.Run();
+            _view.Close();
         }
 
         private void Show_login(string username, string password)

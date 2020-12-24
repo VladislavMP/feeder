@@ -50,6 +50,7 @@ namespace test_project
 
         public void display_feeder_list(List<Feeder> feederlist)
         {
+            if (feederlist == null) return;
             int size = feederlist.Count;
             //int size = 10;
             int i;
@@ -59,7 +60,7 @@ namespace test_project
             for (i = 0; i < size; i++)
             {
                 info_buttons.Add(new Button());
-                info_buttons[i].Tag = feederlist[i].Id;
+                info_buttons[i].Tag = feederlist[i].Feeder_id;
                 info_buttons[i].Click += (sender, e) =>
                 {
                     Button _sender = (Button)sender;
@@ -72,7 +73,7 @@ namespace test_project
                 Controls["feeders"].Controls.Add(info_buttons[i]);
 
                 settings_buttons.Add(new Button());
-                settings_buttons[i].Tag = feederlist[i].Id;
+                settings_buttons[i].Tag = feederlist[i].Feeder_id;
                 settings_buttons[i].Click += (sender, e) =>
                 {
                     Button _sender = (Button)sender;

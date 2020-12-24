@@ -68,7 +68,7 @@ namespace Presenter
         {
             current_user_id = username;
             _view.Show();
-            feederlist = _feederrepository.GetAll(username); //по id ползователя (его логин) получаем список кормушек
+            feederlist = _feederrepository.GetList(username); //по id ползователя (его логин) получаем список кормушек
             _view.display_feeder_list(feederlist);
         }
     }

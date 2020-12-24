@@ -32,6 +32,16 @@ namespace Presenter
         private void Show_register(string username, string password, string confirm_password)
         {
             short register_result = _authservice.Register(username, password, confirm_password);
+
+            _view.register_result_response(register_result);
+
+            if (register_result == 0)
+            {
+                var presenter = _kernel.Get<loginPresenter>();
+                presenter.Run();
+                _view.Close();
+            }
+            
         }
 
         public void Run()

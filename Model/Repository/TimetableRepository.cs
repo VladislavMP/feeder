@@ -39,6 +39,16 @@ namespace Model.Repository
             throw new NotImplementedException();
         }
 
+        public List<Timetable> GetAll(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Timetable> GetList(string id)
+        {
+            throw new NotImplementedException();
+        }
+
         /*       public List<Timetable> GetAll()
       {
           string connStr = "server=localhost;user=root;database=Timetable;password=root";

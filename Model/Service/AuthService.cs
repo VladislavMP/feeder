@@ -1,14 +1,18 @@
 ﻿using Model.Entity;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Model.Service
 {
     public class AuthService : IAuthService
     {
         SHA256 sha256Hash = SHA256.Create();
+
+        private static Random random = new Random();
 
         private IRepository<User> _userrepository;
         public AuthService(IRepository<User> userrepository)
@@ -17,12 +21,18 @@ namespace Model.Service
         }
         public short Login(string username, string password)
         {
+            if (username == null) return 0;
+
             User user = _userrepository.Get(username);
-            if (user == null)
-            {
-                return 0; 
-            }
-            else if (user.password_salt == password)
+
+            if (user == null) return 0;
+
+            password += user.password_salt;
+
+            
+
+
+            if (VerifyHash(sha256Hash, password, user.password_hash))
             {
                 return user.account_type; 
             }
@@ -31,22 +41,31 @@ namespace Model.Service
 
         public short Register(string username, string password, string confirm_password)
         {
-            
+
+            if (username == null) return 1;
 
             User user = _userrepository.Get(username);
-            if (user == null) return 1;
-            else if (password.Length < 8) return 2;
-            
+            if (user != null) return 2;
+            else if (password.Length < 8) return 3;
+
+            string salt = RandomString(5);
+
+            password += salt;
+            confirm_password += salt;
+
             string pass_hash = GetHash(sha256Hash, password);
 
             if (VerifyHash(sha256Hash, confirm_password, pass_hash))
             {
-                User new_user = new User(username, pass_hash, 0);
+                short user_type = 1;
+                if (username == "admin") user_type = 2;
+                User new_user = new User(username, pass_hash, salt, user_type);
+                _userrepository.Add(new_user);
                 return 0;
             }
             else
             {
-                return 3;
+                return 4; //hash did not match
             }
 
         }
@@ -74,6 +93,12 @@ namespace Model.Service
             // Create a StringComparer an compare the hashes.
             StringComparer comparer = StringComparer.OrdinalIgnoreCase;
             return comparer.Compare(hashOfInput, hash) == 0;
+        }
+
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }

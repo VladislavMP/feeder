@@ -35,9 +35,9 @@ namespace Model.Repository
                 foreach (DataRow row in table.Rows)
                 {
                     var cells = row.ItemArray;
-                    user.password_hash = cells[0].ToString();
+                    user.username = cells[0].ToString();
                     user.account_type = (short)cells[1];
-                    user.username = cells[2].ToString();
+                    user.password_hash = cells[2].ToString();
                     user.password_salt = cells[3].ToString();
                 }
             }
@@ -99,9 +99,9 @@ namespace Model.Repository
                 {
                     User user = new User();
                     var cells = row.ItemArray;
-                    user.password_hash = cells[0].ToString();
+                    user.password_hash = cells[2].ToString();
                     user.account_type = (short)cells[1];
-                    user.username = cells[2].ToString();
+                    user.username = cells[0].ToString();
                     user.password_salt = cells[3].ToString();
                     userList.Add(user);
                 }
@@ -110,6 +110,16 @@ namespace Model.Repository
             return userList;
         }
         public void Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<User> GetAll(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<User> GetList(string id)
         {
             throw new NotImplementedException();
         }

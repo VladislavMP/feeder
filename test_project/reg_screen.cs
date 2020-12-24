@@ -36,5 +36,32 @@ namespace test_project
         {
             Show_login_screen?.Invoke();
         }
+
+        public void register_result_response(short result_code)
+        {
+            //1 null username
+            //2 used username
+            //3 short password
+            //4 wrong password
+            switch (result_code)
+            {
+                case 0:
+                    MessageBox.Show("Регистрация успешна.");
+                    break;
+                case 1:
+                    MessageBox.Show("Заполните имя пользователя.");
+                    break;
+                case 2:
+                    MessageBox.Show("Данное имя пользователя уже используется.");
+                    break;
+                case 3:
+                    MessageBox.Show("Ваш пароль должен быть длиной не менее 8 символов.");
+                    break;
+                case 4:
+                    MessageBox.Show("Пароли не совпадают.");
+                    break;
+            }
+                
+        }
     }
 }

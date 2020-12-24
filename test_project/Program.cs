@@ -30,6 +30,7 @@ namespace test_project
             kernel.Bind<Iedit_timetable>().To<edit_timetable>();
             kernel.Bind<Ihome_admin>().To<home_admin>();
             kernel.Bind<Iedit_feeder>().To<edit_feeder>();
+            kernel.Bind<Ireg_screen>().To<reg_screen>();
 
             kernel.Bind<IFeederService>().To<FeederService>();
             kernel.Bind<IAuthService>().To<AuthService>();

@@ -11,6 +11,7 @@ namespace Model
         void Remove(T obj);
         void Save();
 
+        List<T> GetList(string id);
         List<T> GetAll(string id);
         T Get(string id);
     }

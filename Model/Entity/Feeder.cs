@@ -14,6 +14,9 @@ namespace Model.Entity
             User_id = null;
         }
 
+        public Feeder()
+        {
+        }
 
         public string User_id;
         public string Feeder_id;
