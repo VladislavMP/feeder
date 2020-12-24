@@ -89,6 +89,7 @@
             this.no_account_btn.TabIndex = 5;
             this.no_account_btn.Text = "Нет аккаунта?";
             this.no_account_btn.UseVisualStyleBackColor = true;
+            this.no_account_btn.Click += new System.EventHandler(this.no_account_btn_Click);
             // 
             // Form1
             // 

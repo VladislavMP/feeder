@@ -16,6 +16,7 @@ namespace test_project
         private readonly ApplicationContext _context;
 
         public event Action<string, string> Show_login;
+        public event Action Show_register_screen;
 
         public Form1(ApplicationContext context)
         {
@@ -36,6 +37,11 @@ namespace test_project
         private void password_txtbx_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void no_account_btn_Click(object sender, EventArgs e)
+        {
+            Show_register_screen?.Invoke();
         }
     }
 }

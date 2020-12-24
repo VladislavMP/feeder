@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.choose_timetable_cmbbx = new System.Windows.Forms.ComboBox();
             this.back_btn = new System.Windows.Forms.Button();
+            this.save_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // feeder_name_txtbx
@@ -70,7 +71,7 @@
             // 
             // back_btn
             // 
-            this.back_btn.Location = new System.Drawing.Point(26, 399);
+            this.back_btn.Location = new System.Drawing.Point(26, 397);
             this.back_btn.Name = "back_btn";
             this.back_btn.Size = new System.Drawing.Size(94, 29);
             this.back_btn.TabIndex = 4;
@@ -78,11 +79,21 @@
             this.back_btn.UseVisualStyleBackColor = true;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
+            // save_btn
+            // 
+            this.save_btn.Location = new System.Drawing.Point(676, 397);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Size = new System.Drawing.Size(94, 29);
+            this.save_btn.TabIndex = 5;
+            this.save_btn.Text = "Сохранить";
+            this.save_btn.UseVisualStyleBackColor = true;
+            // 
             // edit_feeder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.save_btn);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.choose_timetable_cmbbx);
             this.Controls.Add(this.label2);
@@ -90,6 +101,7 @@
             this.Controls.Add(this.feeder_name_txtbx);
             this.Name = "edit_feeder";
             this.Text = "edit_feeder";
+            this.Load += new System.EventHandler(this.edit_feeder_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +114,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox choose_timetable_cmbbx;
         private System.Windows.Forms.Button back_btn;
+        private System.Windows.Forms.Button save_btn;
     }
 }

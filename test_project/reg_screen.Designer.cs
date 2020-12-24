@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.no_account_btn = new System.Windows.Forms.Button();
+            this.have_account_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // register_btn
@@ -46,6 +46,7 @@
             this.register_btn.TabIndex = 0;
             this.register_btn.Text = "Зарегистрироваться";
             this.register_btn.UseVisualStyleBackColor = true;
+            this.register_btn.Click += new System.EventHandler(this.register_btn_Click);
             // 
             // username_txtbx
             // 
@@ -95,21 +96,22 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Повторите пароль";
             // 
-            // no_account_btn
+            // have_account_btn
             // 
-            this.no_account_btn.Location = new System.Drawing.Point(260, 338);
-            this.no_account_btn.Name = "no_account_btn";
-            this.no_account_btn.Size = new System.Drawing.Size(175, 29);
-            this.no_account_btn.TabIndex = 7;
-            this.no_account_btn.Text = "Есть аккаунт?";
-            this.no_account_btn.UseVisualStyleBackColor = true;
+            this.have_account_btn.Location = new System.Drawing.Point(260, 338);
+            this.have_account_btn.Name = "have_account_btn";
+            this.have_account_btn.Size = new System.Drawing.Size(175, 29);
+            this.have_account_btn.TabIndex = 7;
+            this.have_account_btn.Text = "Есть аккаунт?";
+            this.have_account_btn.UseVisualStyleBackColor = true;
+            this.have_account_btn.Click += new System.EventHandler(this.have_account_btn_Click);
             // 
             // reg_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 429);
-            this.Controls.Add(this.no_account_btn);
+            this.Controls.Add(this.have_account_btn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -119,6 +121,7 @@
             this.Controls.Add(this.register_btn);
             this.Name = "reg_screen";
             this.Text = "reg_screen";
+            this.Load += new System.EventHandler(this.reg_screen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,6 +136,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button no_account_btn;
+        private System.Windows.Forms.Button have_account_btn;
     }
 }

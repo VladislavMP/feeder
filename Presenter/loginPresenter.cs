@@ -25,11 +25,11 @@ namespace Presenter
 
         private void Show_login(string username, string password)
         {
-            short user_type = _authservice.Login(username, password);
+            short user_type = _authservice.Login(username, password); //если выдаёт не 1 и не 2 ( 0 ), то данные для входа неверны
             if (user_type == 1)
             {
                 var presenter = _kernel.Get<home_userPresenter>();
-                presenter.Run();
+                presenter.Run(username);
                 _view.Close();
             }
             else if (user_type == 2)

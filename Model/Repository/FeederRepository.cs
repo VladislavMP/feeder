@@ -22,10 +22,13 @@ namespace Model.Repository
             throw new NotImplementedException();
         }
 
-        public List<Feeder> GetAll(string id)
+        public List<Feeder> GetAll(string id) //id это имя пользователя
         {
             List<Feeder> feederlist = new List<Feeder>();
-            feederlist.Add(new Feeder());
+            feederlist.Add(new Feeder("f7js8kf8", "Кормушечка №1"));
+            feederlist.Add(new Feeder("j7sa03j4", "Кормушечка №2"));
+            feederlist.Add(new Feeder("092mr90d", "Третья кормушка"));
+            feederlist.Add(new Feeder("89hx2esh", "Опа четвёртая"));
             return feederlist;
         }
 

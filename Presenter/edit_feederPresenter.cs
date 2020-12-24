@@ -1,4 +1,5 @@
 ﻿using Model;
+using Model.Entity;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -6,22 +7,24 @@ using System.Text;
 
 namespace Presenter
 {
-    public class add_feederPresenter
+    public class edit_feederPresenter
     {
         private readonly IKernel _kernel;
-        private Iadd_feeder _view;
-        private IFeederService _feederservice;
+        private Iedit_feeder _view;
+        private IRepository<Feeder> _feederrepository;
+        private IRepository<Timetable> _timetablerepository;
 
         private string current_user_id;
+        private string current_feeder_id;
 
-        public add_feederPresenter(IKernel kernel, Iadd_feeder view, IFeederService feederservice)
+        public edit_feederPresenter(IKernel kernel, Iedit_feeder view, IRepository<Feeder> feederrepository, IRepository<Timetable> timetablerepository)
         {
             _kernel = kernel;
             _view = view;
-            _feederservice = feederservice;
+            _feederrepository = feederrepository;
+            _timetablerepository = timetablerepository;
 
             _view.Show_goback += Show_goback;
-            _view.Add_feeder += Add_feeder;
         }
 
         private void Show_goback()
@@ -31,14 +34,10 @@ namespace Presenter
             _view.Close();
         }
 
-        private void Add_feeder(string id)
-        {
-            _feederservice.Add_feeder(id);
-        }
-
-        public void Run(string username)
+        public void Run(string username, string feeder_id)
         {
             current_user_id = username;
+            current_feeder_id = feeder_id;
             _view.Show();
         }
     }

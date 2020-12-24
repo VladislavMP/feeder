@@ -10,6 +10,8 @@ namespace Presenter
         private readonly IKernel _kernel;
         private Imanage_timetables _view;
 
+        private string current_user_id;
+
         public manage_timetablesPresenter(IKernel kernel, Imanage_timetables view)
         {
             _kernel = kernel;
@@ -21,12 +23,13 @@ namespace Presenter
         private void Show_goback()
         {
             var presenter = _kernel.Get<home_userPresenter>();
-            presenter.Run();
+            presenter.Run(current_user_id);
             _view.Close();
         }
 
-        public void Run()
+        public void Run(string username)
         {
+            current_user_id = username;
             _view.Show();
         }
     }
