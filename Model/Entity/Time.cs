@@ -6,20 +6,14 @@ namespace Model.Entity
 {
     public class Time : ITime
     {
-        private string DayOfWeek;
-        private string TimeHMS;
+        public string TimeHMS { get; set; }
 
         public Time()
         {
             TimeHMS = DateTime.Now.ToString("HH:mm:ss");
-            DayOfWeek = DateTime.Now.DayOfWeek.ToString();
         }
         public Time(string t)
         {
-        }
-        public string Get_DayOfWeek()
-        {
-            return this.DayOfWeek;
         }
         public string Get_TimeHMS()
         {
@@ -29,11 +23,6 @@ namespace Model.Entity
         public bool CompareTimeHMS(Time t2)
         {
             if (this.TimeHMS == t2.TimeHMS) return true;
-            return false;
-        }
-        public bool CompareDayOfWeek(Time t2)
-        {
-            if (this.DayOfWeek == t2.DayOfWeek) return true;
             return false;
         }
     }

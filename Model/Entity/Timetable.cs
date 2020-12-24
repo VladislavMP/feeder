@@ -6,10 +6,11 @@ namespace Model.Entity
 {
     public class Timetable
     {
-        private List<Time> TimeOfFeed;
-        private string FeederId;
-        private string name;
-        public string Id { get; set; }
+        public List<Time> TimeOfFeed { get; set; }
+        public string FeederId { get; set; }
+        public string UserId { get; set; }
+        public string name { get; set; }
+        public string TimetableId { get; set; }
 
         public void Add_Time(Time t)
         {

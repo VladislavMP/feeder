@@ -25,6 +25,14 @@ namespace Model.Entity
             ad.Fill(table);
             return table;
         }
+        public DataTable Find(string t, string c, string u)
+        {
+            MySqlCommand command = new MySqlCommand("SELECT " + u + " FROM " + t + " WHERE " + c, conn);
+            DataTable table = new DataTable();
+            ad.SelectCommand = command;
+            ad.Fill(table);
+            return table;
+        }
         public DataTable GetAll(string t)
         {
             MySqlCommand command = new MySqlCommand("SELECT * FROM " + t, conn);
