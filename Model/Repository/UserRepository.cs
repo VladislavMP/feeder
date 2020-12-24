@@ -88,7 +88,27 @@ namespace Model.Repository
                 + password_hash + "', user_password_salt = '" + password_salt + "'";
             DataContext.Update("users", com, cond);
         }
-
+        public List<User> GetAll()
+        {
+            DataTable table = new DataTable();
+            table = DataContext.GetAll("users");
+            List<User> userList = new List<User>();
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    User user = new User();
+                    var cells = row.ItemArray;
+                    user.password_hash = cells[0].ToString();
+                    user.account_type = (short)cells[1];
+                    user.username = cells[2].ToString();
+                    user.password_salt = cells[3].ToString();
+                    userList.Add(user);
+                }
+            }
+            else return null;
+            return userList;
+        }
         public void Save()
         {
             throw new NotImplementedException();

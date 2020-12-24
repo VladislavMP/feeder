@@ -33,9 +33,12 @@ namespace Model
              if (table.Rows.Count > 1)
                  MessageBox.Show("Yes");
              else MessageBox.Show("No"); */
-            UserRepository R = new UserRepository();
-            //R.Remove("r");
-            //MessageBox.Show(user.password_hash);
+            FeederRepository R = new FeederRepository();
+            List<Feeder> u = R.GetList("test");
+            //foreach (Feeder p in u)
+            //{
+            //    MessageBox.Show(p.Name);
+            //}
 
         }
     }

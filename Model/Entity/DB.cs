@@ -25,6 +25,14 @@ namespace Model.Entity
             ad.Fill(table);
             return table;
         }
+        public DataTable GetAll(string t)
+        {
+            MySqlCommand command = new MySqlCommand("SELECT * FROM " + t, conn);
+            DataTable table = new DataTable();
+            ad.SelectCommand = command;
+            ad.Fill(table);
+            return table;
+        }
         public void Add(string t, string c)
         {
             conn.Open();

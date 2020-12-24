@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Model.Entity
 {
-    class Feeder
+    public class Feeder
     {
-        public string Id;
+        public string User_id;
+        public string Feeder_id;
+        public string Timetable_id;
         public string Name;
     }
 }
