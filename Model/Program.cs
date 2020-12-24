@@ -34,7 +34,12 @@ namespace Model
                  MessageBox.Show("Yes");
              else MessageBox.Show("No"); */
             FeederRepository R = new FeederRepository();
-            List<Feeder> u = R.GetList("test");
+            Feeder u = R.Get("test");
+            u.Feeder_id = "5";
+            u.Name = "8";
+            u.Timetable_id = "7";
+            u.User_id = "6";
+            R.Remove(u);
             //foreach (Feeder p in u)
             //{
             //    MessageBox.Show(p.Name);

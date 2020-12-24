@@ -12,11 +12,29 @@ namespace Model.Repository
         private DB DataContext = new DB();
         public int Add(Feeder obj)
         {
+            string User_id = obj.User_id;
+            string Feeder_id = obj.Feeder_id;
+            string Timetable_id = obj.Timetable_id;
+            string Name = obj.Name;
+            string com = "('" + Feeder_id + "', '" + User_id + "', '" + Timetable_id + "', '" + Name + "')";
+            DataContext.Add("feeders", com);
             return 0;
         }
         public void Remove(Feeder obj)
         {
-
+            string Feeder_id = obj.Feeder_id;
+            string com = "feeder_id = '" + Feeder_id + "'";
+            DataContext.Delete("feeders", com);
+        }
+        public void Update(Feeder obj, string cond)
+        {
+            string User_id = obj.User_id;
+            string Feeder_id = obj.Feeder_id;
+            string Timetable_id = obj.Timetable_id;
+            string Name = obj.Name;
+            string com = "feeder_id = '" + Feeder_id + "', user_id = '" + User_id + "', timetable_id = '"
+                + Timetable_id + "', name = '" + Name + "'";
+            DataContext.Update("feeders", com, cond);
         }
         public void Save()
         {
@@ -65,7 +83,7 @@ namespace Model.Repository
         public List<Feeder> GetList(string Feeder_id)
         {
             DataTable table = new DataTable();
-            string com = "feeder_id= '" + Feeder_id + "'";
+            string com = "user_id= '" + Feeder_id + "'";
             table = DataContext.Find("feeders", com);
             List<Feeder> feederList = new List<Feeder>();
             if (table.Rows.Count > 0)
