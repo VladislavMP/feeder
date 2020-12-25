@@ -99,9 +99,9 @@ namespace Model.Repository
                 {
                     User user = new User();
                     var cells = row.ItemArray;
-                    user.password_hash = cells[2].ToString();
-                    user.account_type = (short)cells[1];
                     user.username = cells[0].ToString();
+                    user.account_type = (short)cells[1];
+                    user.password_hash = cells[2].ToString();
                     user.password_salt = cells[3].ToString();
                     userList.Add(user);
                 }
