@@ -33,9 +33,20 @@ namespace Model
              if (table.Rows.Count > 1)
                  MessageBox.Show("Yes");
              else MessageBox.Show("No"); */
-            //TimetableRepository R = new TimetableRepository();
-            //List<Timetable> u = R.GetList("test");
-            //R.Remove(u);
+           /* TimetableRepository R = new TimetableRepository();
+            Timetable u = new Timetable();
+            Time t = new Time();
+            Time y = new Time();
+            t.TimeHMS = DateTime.Now.ToString("HH:mm");
+            y.TimeHMS = "19:00";
+            u.name = "tttt";
+            u.TimetableId = "tttt";
+            u.UserId = "tttt";
+            MessageBox.Show(t.TimeHMS);
+            u.TimeOfFeed = new List<Time>();
+            u.TimeOfFeed.Add(t);
+            u.TimeOfFeed.Add(y);
+            R.Add(u);*/
             //foreach (Timetable p in u)
             //{
             //    MessageBox.Show(p.TimetableId);

@@ -48,6 +48,13 @@ namespace Model.Entity
             command.ExecuteNonQuery();
             conn.Close();
         }
+        public void Add(string t, string c, string colm_n)
+        {
+            conn.Open();
+            MySqlCommand command = new MySqlCommand("INSERT INTO " + t + " " + colm_n + " VALUES " + c, conn);
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
         public void Update(string t, string c, string cond)
         {
             conn.Open();

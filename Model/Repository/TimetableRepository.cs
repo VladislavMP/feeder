@@ -14,9 +14,18 @@ namespace Model.Repository
 
         public int Add(Timetable obj)
         {
-            //obj.Id = _end_index;
-            //_end_index += 1;
-            //_data.Add(obj);
+            string UserId = obj.UserId;
+            string TimetableId = obj.TimetableId;
+            string name = obj.name;
+            List<Time> TimeOfFeed = obj.TimeOfFeed;
+            string com = "('" + TimetableId + "', '" + UserId + "', '" + name + "')";
+            foreach (Time t in TimeOfFeed)
+            {
+                string com_2 = "('" + t.TimeHMS + "', '" + name + "')";
+                string com_3 = "(time, timetable_id)";
+                DataContext.Add("timestamps", com_2, com_3);
+            }
+            DataContext.Add("timetable", com);
             return 0;
         }
 
