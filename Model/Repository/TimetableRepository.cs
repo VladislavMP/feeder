@@ -19,11 +19,14 @@ namespace Model.Repository
             string name = obj.name;
             List<Time> TimeOfFeed = obj.TimeOfFeed;
             string com = "('" + TimetableId + "', '" + UserId + "', '" + name + "')";
-            foreach (Time t in TimeOfFeed)
+            if (TimeOfFeed != null)
             {
-                string com_2 = "('" + t.TimeHMS + "', '" + name + "')";
-                string com_3 = "(time, timetable_id)";
-                DataContext.Add("timestamps", com_2, com_3);
+                foreach (Time t in TimeOfFeed)
+                {
+                    string com_2 = "('" + t.TimeHMS + "', '" + TimetableId + "')";
+                    string com_3 = "(time, timetable_id)";
+                    DataContext.Add("timestamps", com_2, com_3);
+                }
             }
             DataContext.Add("timetable", com);
             return 0;
@@ -31,9 +34,43 @@ namespace Model.Repository
 
         public void Remove(Timetable obj)
         {
-           // _data.RemoveAll(c => c.Id == id);
+            string TimetableId = obj.TimetableId;
+            List<Time> TimeOfFeed = obj.TimeOfFeed;
+            string com = "timetable_id = '" + TimetableId + "'";
+            if (TimeOfFeed != null)
+            {
+                foreach (Time t in TimeOfFeed)
+                {
+                    string com_2 = "timetable_id = '" + TimetableId + "'";
+                    DataContext.Delete("timestamps", com_2);
+                }
+            } 
+            DataContext.Delete("timetable", com);
         }
+        public void Update(Timetable obj, string cond)
+        {
+            string UserId = obj.UserId;
+            string TimetableId = obj.TimetableId;
+            string name = obj.name;
+            List<Time> TimeOfFeed = obj.TimeOfFeed;
+            string com = "timetable_id = '" + TimetableId + "', user_id = '" + UserId + "', timetable_name = '"
+                + name + "'";
+            DataContext.Update("timetable", com, cond);
+             
+            string com_2 = "timetable_id = '" + TimetableId + "'";
+            DataContext.Delete("timestamps", com_2);
 
+            if (TimeOfFeed != null)
+            {
+                foreach (Time t in TimeOfFeed)
+                {
+                    com_2 = "('" + t.TimeHMS + "', '" + TimetableId + "')";
+                    string com_3 = "(time, timetable_id)";
+                    DataContext.Add("timestamps", com_2, com_3);
+                }
+            }
+
+        }
         public void Save()
         {
         }
@@ -64,6 +101,7 @@ namespace Model.Repository
                 {
                     var cells = row.ItemArray;
                     Time time = new Time("1");
+                    time.Id = (int)cells[0];
                     time.TimeHMS = cells[1].ToString();
                     TimeOfFeed.Add(time);
                 }
@@ -99,6 +137,7 @@ namespace Model.Repository
                         {
                             var cells_in = row_in.ItemArray;
                             Time time = new Time("1");
+                            time.Id = (int)cells[0];
                             time.TimeHMS = cells_in[1].ToString();
                             TimeOfFeed.Add(time);
                         }
@@ -139,8 +178,8 @@ namespace Model.Repository
                         {
                             var cells_in = row_in.ItemArray;
                             Time time = new Time("1");
+                            time.Id = (int)cells[0];
                             time.TimeHMS = cells_in[1].ToString();
-                            MessageBox.Show(time.TimeHMS);
                             TimeOfFeed.Add(time);
                         }
                     }

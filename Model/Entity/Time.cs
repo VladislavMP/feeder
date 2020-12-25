@@ -11,7 +11,7 @@ namespace Model.Entity
 
         public Time()
         {
-            TimeHMS = DateTime.Now.ToString("HH:mm:ss");
+            TimeHMS = DateTime.Now.ToString("HH:mm");
         }
         public Time(string t)
         {
