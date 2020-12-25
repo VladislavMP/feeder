@@ -6,7 +6,7 @@ namespace Model
 {
     public interface IFeederService
     {
-        void Add_feeder(string id);
+        short Activate_feeder(string user_id, string feeder_id);
     }
 
 }

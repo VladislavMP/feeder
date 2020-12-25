@@ -12,6 +12,7 @@ namespace test_project
     public partial class home_admin : Form, Ihome_admin
     {
         public event Action Show_logout;
+        public event Action Show_feeder_id_list;
 
         private readonly ApplicationContext _context;
         public home_admin(ApplicationContext context)
@@ -28,6 +29,11 @@ namespace test_project
         private void Logout_btn_Click(object sender, EventArgs e)
         {
             Show_logout?.Invoke();
+        }
+
+        private void Manage_feeder_ids_btn_Click(object sender, EventArgs e)
+        {
+            Show_feeder_id_list?.Invoke();
         }
     }
 }

@@ -43,7 +43,7 @@ namespace Presenter
             else if (user_type == 2)
             {
                 var presenter = _kernel.Get<home_adminPresenter>();
-                presenter.Run();
+                presenter.Run(username);
                 _view.Close();
             }
             else

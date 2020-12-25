@@ -8,5 +8,7 @@ namespace Presenter
     {
         public event Action Show_goback;
         public event Action<string> Add_feeder;
+
+        void Activation_result_response(short activation_result);
     }
 }

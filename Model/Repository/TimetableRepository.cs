@@ -158,5 +158,10 @@ namespace Model.Repository
         {
             throw new NotImplementedException();
         }
+
+        public void Update(Timetable obj, string cond)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -39,5 +39,11 @@ namespace test_project
         {
 
         }
+
+        public void Activation_result_response(short activation_result)
+        {
+            if (activation_result == 1) MessageBox.Show("Кормушка активирована и добавлена в ваш аккаунт.");
+            else if (activation_result == 0) MessageBox.Show("Введён неверный идентификатор или кормушка уже активирована. Свяжитесь с администратором, если считаете это ошибкой.");
+        }
     }
 }

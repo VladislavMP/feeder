@@ -9,10 +9,10 @@ namespace Model
     {
         int Add(T obj);
         void Remove(T obj);
-        void Save();
+        void Update(T obj, string cond);
 
         List<T> GetList(string id);
-        List<T> GetAll(string id);
+        List<T> GetAll();
         T Get(string id);
     }
 }

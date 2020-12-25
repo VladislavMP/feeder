@@ -31,6 +31,7 @@ namespace test_project
             kernel.Bind<Ihome_admin>().To<home_admin>();
             kernel.Bind<Iedit_feeder>().To<edit_feeder>();
             kernel.Bind<Ireg_screen>().To<reg_screen>();
+            kernel.Bind<Ifeeder_id_list>().To<feeder_id_list>();
 
             kernel.Bind<IFeederService>().To<FeederService>();
             kernel.Bind<IAuthService>().To<AuthService>();

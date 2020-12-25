@@ -83,6 +83,7 @@
             this.Manage_feeder_ids_btn.TabIndex = 4;
             this.Manage_feeder_ids_btn.Text = "Управление идентификаторами";
             this.Manage_feeder_ids_btn.UseVisualStyleBackColor = true;
+            this.Manage_feeder_ids_btn.Click += new System.EventHandler(this.Manage_feeder_ids_btn_Click);
             // 
             // User_list_btn
             // 

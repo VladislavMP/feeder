@@ -33,7 +33,8 @@ namespace Presenter
 
         private void Add_feeder(string id)
         {
-            _feederservice.Add_feeder(id);
+            short activation_result = _feederservice.Activate_feeder(current_user_id ,id);
+            _view.Activation_result_response(activation_result);
         }
 
         public void Run(string username)

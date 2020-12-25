@@ -8,21 +8,25 @@ namespace Model.Service
 {
     public class FeederService : IFeederService
     {
-        public FeederService() //check for repository injection
+        private IRepository<Feeder> _feederrepository;
+        private IRepository<User> _userrepository;
+        public FeederService(IRepository<Feeder> feederrepository, IRepository<User> userrepository) //check for repository injection
         {
+            _feederrepository = feederrepository;
+            _userrepository = userrepository;
         }
 
-        public void Add_feeder(string id)
+        public short Activate_feeder(string user_id, string feeder_id)
         {
-            if (id == "realid") //проверяем наличие кормушки в базе
-            {
-                string message = "Feeder with id = \"" + id + "\" is linked to your account.";
-                MessageBox.Show(message, "Notification", MessageBoxButtons.OK);
-            }
+            Feeder feeder = _feederrepository.Get(feeder_id);
+            
+            if (feeder.User_id != "") return 0;
             else
             {
-                string message = "Feeder with id = \"" + id + "\" is not defined.";
-                MessageBox.Show(message, "Failed", MessageBoxButtons.OK);
+                feeder.User_id = user_id;
+                string cond = "feeder_id = '" + feeder_id + "'";
+                _feederrepository.Update(feeder, cond);
+                return 1;
             }
         }
     }
