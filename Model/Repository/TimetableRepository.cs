@@ -180,7 +180,6 @@ namespace Model.Repository
                             Time time = new Time("1");
                             time.Id = (int)cells[0];
                             time.TimeHMS = cells_in[1].ToString();
-                            MessageBox.Show(time.TimeHMS);
                             TimeOfFeed.Add(time);
                         }
                     }
