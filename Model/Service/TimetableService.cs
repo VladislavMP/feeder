@@ -41,5 +41,34 @@ namespace Model.Service
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        public short Save_Timetable(string timetable_id, List<Time> timestamps, string name)
+        {
+            if (name == "") return 1; //пустое имя
+
+            int size = timestamps.Count;
+            int i;
+            string[] words;
+            int minutes;
+            int hours;
+
+            for (i = 0; i < size; i++)
+            {
+                words = timestamps[i].TimeHMS.Split(':');
+                if (words.Length != 2) return 2;
+                if (!Int32.TryParse(words[0], out hours)) return 2;
+                if (!Int32.TryParse(words[1], out minutes)) return 2;
+                if (minutes > 59 || hours > 24) return 2;
+            }
+
+            Timetable timetable = _timetablerepository.Get(timetable_id);
+            timetable.name = name;
+            timetable.TimeOfFeed = timestamps;
+            string cond = "timetable_id = '" + timetable_id + "'";
+            _timetablerepository.Update(timetable, cond);
+            return 0;
+        }
+
+
     }
 }

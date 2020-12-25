@@ -46,7 +46,7 @@ namespace Presenter
 
         private void Add_feeder(string feeder_id)
         {
-            if (feeder_id == null) return;
+            if (feeder_id == "") return;
 
             Feeder feeder0 = _feederrepository.Get(feeder_id);
 

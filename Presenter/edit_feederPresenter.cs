@@ -25,6 +25,20 @@ namespace Presenter
             _timetablerepository = timetablerepository;
 
             _view.Show_goback += Show_goback;
+            _view.Save += Save;
+        }
+
+        private void Save(string name, string timetable_id)
+        {
+            short save_result = 0;
+            if (name == "") save_result = 1;
+            _view.Display_save_result(save_result);
+            if (save_result == 1) return;
+            Feeder feeder = _feederrepository.Get(current_feeder_id);
+            feeder.Name = name;
+            feeder.Timetable_id = timetable_id;
+            string cond = "feeder_id = '" + current_feeder_id + "'";
+            _feederrepository.Update(feeder, cond);
         }
 
         private void Show_goback()
@@ -39,6 +53,7 @@ namespace Presenter
             current_user_id = username;
             current_feeder_id = feeder_id;
             _view.Show();
+            _view.Load_existing_data(_timetablerepository.GetList(username), _feederrepository.Get(feeder_id).Name, _feederrepository.Get(feeder_id).Timetable_id);
         }
     }
 }

@@ -60,6 +60,7 @@
             this.timetables.Name = "timetables";
             this.timetables.Size = new System.Drawing.Size(717, 298);
             this.timetables.TabIndex = 3;
+            this.timetables.Paint += new System.Windows.Forms.PaintEventHandler(this.timetables_Paint);
             // 
             // add_timetable_btn
             // 

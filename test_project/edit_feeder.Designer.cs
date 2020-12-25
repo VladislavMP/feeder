@@ -40,7 +40,7 @@
             // 
             this.feeder_name_txtbx.Location = new System.Drawing.Point(26, 36);
             this.feeder_name_txtbx.Name = "feeder_name_txtbx";
-            this.feeder_name_txtbx.Size = new System.Drawing.Size(125, 27);
+            this.feeder_name_txtbx.Size = new System.Drawing.Size(257, 27);
             this.feeder_name_txtbx.TabIndex = 0;
             // 
             // label1
@@ -66,8 +66,9 @@
             this.choose_timetable_cmbbx.FormattingEnabled = true;
             this.choose_timetable_cmbbx.Location = new System.Drawing.Point(26, 114);
             this.choose_timetable_cmbbx.Name = "choose_timetable_cmbbx";
-            this.choose_timetable_cmbbx.Size = new System.Drawing.Size(151, 28);
+            this.choose_timetable_cmbbx.Size = new System.Drawing.Size(257, 28);
             this.choose_timetable_cmbbx.TabIndex = 3;
+            this.choose_timetable_cmbbx.SelectedIndexChanged += new System.EventHandler(this.choose_timetable_cmbbx_SelectedIndexChanged);
             // 
             // back_btn
             // 
@@ -87,6 +88,7 @@
             this.save_btn.TabIndex = 5;
             this.save_btn.Text = "Сохранить";
             this.save_btn.UseVisualStyleBackColor = true;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
             // edit_feeder
             // 

@@ -34,17 +34,21 @@ namespace Presenter
         private void Add_timetable()
         {
             _timetableservice.Add_Timetable(current_user_id);
+            timetablelist = _timetablerepository.GetList(current_user_id);
+            _view.display_timetable_list(timetablelist);
         }
 
         private void Remove_timetable(string timetable_id)
         {
-            throw new NotImplementedException();
+            _timetablerepository.Remove(_timetablerepository.Get(timetable_id));
+            timetablelist = _timetablerepository.GetList(current_user_id);
+            _view.display_timetable_list(timetablelist);
         }
 
         private void Show_edit_timetable(string timetable_id)
         {
             var presenter = _kernel.Get<edit_timetablePresenter>();
-            presenter.Run(timetable_id);
+            presenter.Run(current_user_id, timetable_id);
             _view.Close();
         }
 

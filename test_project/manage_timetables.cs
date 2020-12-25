@@ -36,6 +36,7 @@ namespace test_project
 
         public void display_timetable_list(List<Timetable> timetablelist)
         {
+            Controls["timetables"].Controls.Clear();
             if (timetablelist == null) return;
             int size = timetablelist.Count;
             
@@ -48,7 +49,7 @@ namespace test_project
             for (i = 0; i < size; i++)
             {
                 timetable_names.Add(new Label());
-                timetable_names[i].Location = new Point(50, 50 * i);
+                timetable_names[i].Location = new Point(20, 50 * i);
                 timetable_names[i].Width = 100;
                 timetable_names[i].Visible = true;
                 timetable_names[i].Text = timetablelist[i].name;
@@ -100,6 +101,11 @@ namespace test_project
         private void add_timetable_btn_Click(object sender, EventArgs e)
         {
             Add_timetable?.Invoke();
+        }
+
+        private void timetables_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
