@@ -16,6 +16,7 @@ namespace test_project
         public event Action Show_goback;
         public event Action<string> Show_edit_timetable;
         public event Action<string> Remove_timetable;
+        public event Action Add_timetable;
 
         public manage_timetables(ApplicationContext context)
         {
@@ -94,6 +95,11 @@ namespace test_project
 
 
             }
+        }
+
+        private void add_timetable_btn_Click(object sender, EventArgs e)
+        {
+            Add_timetable?.Invoke();
         }
     }
 }

@@ -35,6 +35,7 @@ namespace test_project
 
             kernel.Bind<IFeederService>().To<FeederService>();
             kernel.Bind<IAuthService>().To<AuthService>();
+            kernel.Bind<ITimetableService>().To<TimetableService>();
 
             kernel.Bind<IRepository<User>>().To<UserRepository>();
             kernel.Bind<IRepository<Timetable>>().To<TimetableRepository>();

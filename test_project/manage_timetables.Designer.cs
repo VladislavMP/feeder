@@ -31,6 +31,7 @@
             this.back_btn = new System.Windows.Forms.Button();
             this.import_btn = new System.Windows.Forms.Button();
             this.timetables = new System.Windows.Forms.Panel();
+            this.add_timetable_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // back_btn
@@ -60,11 +61,22 @@
             this.timetables.Size = new System.Drawing.Size(717, 298);
             this.timetables.TabIndex = 3;
             // 
+            // add_timetable_btn
+            // 
+            this.add_timetable_btn.Location = new System.Drawing.Point(523, 386);
+            this.add_timetable_btn.Name = "add_timetable_btn";
+            this.add_timetable_btn.Size = new System.Drawing.Size(94, 29);
+            this.add_timetable_btn.TabIndex = 4;
+            this.add_timetable_btn.Text = "Создать";
+            this.add_timetable_btn.UseVisualStyleBackColor = true;
+            this.add_timetable_btn.Click += new System.EventHandler(this.add_timetable_btn_Click);
+            // 
             // manage_timetables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.add_timetable_btn);
             this.Controls.Add(this.timetables);
             this.Controls.Add(this.import_btn);
             this.Controls.Add(this.back_btn);
@@ -79,5 +91,6 @@
         private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.Button import_btn;
         private System.Windows.Forms.Panel timetables;
+        private System.Windows.Forms.Button add_timetable_btn;
     }
 }
