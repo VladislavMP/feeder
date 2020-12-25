@@ -6,8 +6,9 @@ namespace Model.Entity
 {
     public class Time : ITime
     {
-        private string DayOfWeek;
-        private string TimeHMS;
+        public string DayOfWeek;
+        public string TimeHMS;
+        public int Id; 
 
         public Time()
         {

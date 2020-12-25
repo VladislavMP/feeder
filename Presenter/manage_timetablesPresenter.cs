@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Model;
+using Model.Entity;
 using Ninject;
 
 namespace Presenter
@@ -9,15 +11,33 @@ namespace Presenter
     {
         private readonly IKernel _kernel;
         private Imanage_timetables _view;
+        private IRepository<Timetable> _timetablerepository;
+
+        private List<Timetable> timetablelist;
 
         private string current_user_id;
 
-        public manage_timetablesPresenter(IKernel kernel, Imanage_timetables view)
+        public manage_timetablesPresenter(IKernel kernel, Imanage_timetables view, IRepository<Timetable> timetablerepository)
         {
             _kernel = kernel;
             _view = view;
+            _timetablerepository = timetablerepository;
 
             _view.Show_goback += Show_goback;
+            _view.Show_edit_timetable += Show_edit_timetable;
+            _view.Remove_timetable += Remove_timetable;
+        }
+
+        private void Remove_timetable(string timetable_id)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Show_edit_timetable(string timetable_id)
+        {
+            var presenter = _kernel.Get<edit_timetablePresenter>();
+            presenter.Run(timetable_id);
+            _view.Close();
         }
 
         private void Show_goback()
@@ -31,6 +51,8 @@ namespace Presenter
         {
             current_user_id = username;
             _view.Show();
+            timetablelist = _timetablerepository.GetList(username);
+            _view.display_timetable_list(timetablelist);
         }
     }
 }

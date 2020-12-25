@@ -6,9 +6,9 @@ namespace Model.Entity
 {
     public class Timetable
     {
-        private List<Time> TimeOfFeed;
-        private string FeederId;
-        private string name;
+        public List<Time> TimeOfFeed;
+        public string FeederId;
+        public string name;
         public string Id { get; set; }
 
         public void Add_Time(Time t)
