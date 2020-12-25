@@ -153,5 +153,10 @@ namespace Model.Repository
 
             return timetableList;
         }
+
+        public List<Timetable> GetAll(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

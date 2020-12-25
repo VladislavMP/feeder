@@ -54,7 +54,7 @@ namespace test_project
                 Controls["timetables"].Controls.Add(timetable_names[i]);
 
                 export_buttons.Add(new Button());
-                export_buttons[i].Tag = timetablelist[i].Id;
+                export_buttons[i].Tag = timetablelist[i].TimetableId;
                 export_buttons[i].Click += (sender, e) =>
                 {
                     Button _sender = (Button)sender;
@@ -67,7 +67,7 @@ namespace test_project
                 Controls["timetables"].Controls.Add(export_buttons[i]);
 
                 edit_buttons.Add(new Button());
-                edit_buttons[i].Tag = timetablelist[i].Id;
+                edit_buttons[i].Tag = timetablelist[i].TimetableId;
                 edit_buttons[i].Click += (sender, e) =>
                 {
                     Button _sender = (Button)sender;
@@ -80,7 +80,7 @@ namespace test_project
                 Controls["timetables"].Controls.Add(edit_buttons[i]);
 
                 remove_buttons.Add(new Button());
-                remove_buttons[i].Tag = timetablelist[i].Id;
+                remove_buttons[i].Tag = timetablelist[i].TimetableId;
                 remove_buttons[i].Click += (sender, e) =>
                 {
                     Button _sender = (Button)sender;

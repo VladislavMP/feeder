@@ -83,7 +83,7 @@ namespace Model.Repository
         public List<Feeder> GetList(string user_id)
         {
             DataTable table = new DataTable();
-            string com = "feeder_id= '" + Feeder_id + "'";
+            string com = "user_id= '" + user_id + "'";
             table = DataContext.Find("feeders", com);
             List<Feeder> feederList = new List<Feeder>();
             if (table.Rows.Count > 0)
