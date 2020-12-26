@@ -5,7 +5,7 @@ using Model.Entity;
 using Model.Repository;
 using System.Threading;
 using System.Windows.Forms;
-
+using Model.Service;
 namespace Sim
 {
     public static class TestSim
@@ -14,6 +14,7 @@ namespace Sim
         private static List<Timetable> timetables;
         private static FeederRepository F = new FeederRepository();
         private static TimetableRepository T = new TimetableRepository();
+        private static StatisticsService S = new StatisticsService();
         public static void Refresh()
         {
             timetables = T.GetAll();
@@ -44,6 +45,8 @@ namespace Sim
                                 }
                                 if (feeder_id != "null")
                                 MessageBox.Show("Кормушка " + feeder_name + " Id " + feeder_id + " покормила в " + t.TimeHMS);
+                                Statistics.feeding_counter++;
+                                S.Save();
                             }
                         }
                     }
