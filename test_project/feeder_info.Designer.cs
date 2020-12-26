@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.feeder_info_label = new System.Windows.Forms.Label();
             this.back_btn = new System.Windows.Forms.Button();
             this.check_logs_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // feeder_info_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Вся информация + статистика";
+            this.feeder_info_label.AutoSize = true;
+            this.feeder_info_label.Location = new System.Drawing.Point(41, 44);
+            this.feeder_info_label.Name = "feeder_info_label";
+            this.feeder_info_label.Size = new System.Drawing.Size(219, 20);
+            this.feeder_info_label.TabIndex = 0;
+            this.feeder_info_label.Text = "Вся информация + статистика";
+            this.feeder_info_label.Click += new System.EventHandler(this.label1_Click);
             // 
             // back_btn
             // 
@@ -50,6 +51,7 @@
             this.back_btn.TabIndex = 1;
             this.back_btn.Text = "Назад";
             this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // check_logs_btn
             // 
@@ -67,9 +69,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.check_logs_btn);
             this.Controls.Add(this.back_btn);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.feeder_info_label);
             this.Name = "feeder_info";
             this.Text = "feeder_info";
+            this.Load += new System.EventHandler(this.feeder_info_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -77,7 +80,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label feeder_info_label;
         private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.Button check_logs_btn;
     }

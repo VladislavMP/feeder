@@ -25,6 +25,14 @@ namespace Presenter
             _view.Add_feeder += Add_feeder;
             _view.Remove_feeder += Delete_feeder;
             _view.Show_goback += Show_goback;
+            _view.Show_feeder_info += Show_feeder_info;
+        }
+
+        private void Show_feeder_info(string feeder_id)
+        {
+            var presenter = _kernel.Get<feeder_infoPresenter>();
+            presenter.Run(current_admin, feeder_id);
+            _view.Close();
         }
 
         private void Show_goback()

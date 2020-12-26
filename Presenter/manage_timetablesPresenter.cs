@@ -41,6 +41,7 @@ namespace Presenter
         private void Remove_timetable(string timetable_id)
         {
             _timetablerepository.Remove(_timetablerepository.Get(timetable_id));
+            
             timetablelist = _timetablerepository.GetList(current_user_id);
             _view.display_timetable_list(timetablelist);
         }

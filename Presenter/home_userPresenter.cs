@@ -38,7 +38,9 @@ namespace Presenter
 
         private void Show_feeder_info(string feeder_id)
         {
-            throw new NotImplementedException();
+            var presenter = _kernel.Get<feeder_infoPresenter>();
+            presenter.Run(current_user_id, feeder_id);
+            _view.Close();
         }
 
         private void Show_manage_timetables()

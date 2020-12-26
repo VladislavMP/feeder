@@ -14,7 +14,6 @@ namespace test_project
     public partial class home_user : Form, Ihome_user
     {
 
-        Button txtBox;
         public event Action Show_add_feeder;
         public event Action Show_manage_timetables;
         public event Action Show_logout;
@@ -64,10 +63,11 @@ namespace test_project
                 info_buttons[i].Click += (sender, e) =>
                 {
                     Button _sender = (Button)sender;
-                    MessageBox.Show((string)_sender.Tag);
+                    Show_feeder_info?.Invoke((string)_sender.Tag);
+                    //MessageBox.Show((string)_sender.Tag);
                 };
-                info_buttons[i].Location = new Point(200, 50*i);
-                info_buttons[i].Width = 140;
+                info_buttons[i].Location = new Point(300, 50*i);
+                info_buttons[i].Width = 120;
                 info_buttons[i].Visible = true;
                 info_buttons[i].Text = "Информация";
                 Controls["feeders"].Controls.Add(info_buttons[i]);
@@ -80,15 +80,15 @@ namespace test_project
                     
                     Show_feeder_settings?.Invoke((string)_sender.Tag);
                 };
-                settings_buttons[i].Location = new Point( 400, 50 * i);
-                settings_buttons[i].Width = 140;
+                settings_buttons[i].Location = new Point( 440, 50 * i);
+                settings_buttons[i].Width = 120;
                 settings_buttons[i].Visible = true;
                 settings_buttons[i].Text = "Настройки";
                 Controls["feeders"].Controls.Add(settings_buttons[i]);
 
                 feeder_names.Add(new Label());
-                feeder_names[i].Location = new Point(50, 50 * i);
-                feeder_names[i].Width = 140;
+                feeder_names[i].Location = new Point(0, 50 * i);
+                feeder_names[i].Width = 250;
                 feeder_names[i].Visible = true;
                 feeder_names[i].Text = feederlist[i].Name;
                 Controls["feeders"].Controls.Add(feeder_names[i]);

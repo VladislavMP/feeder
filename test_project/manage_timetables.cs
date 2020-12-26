@@ -49,8 +49,8 @@ namespace test_project
             for (i = 0; i < size; i++)
             {
                 timetable_names.Add(new Label());
-                timetable_names[i].Location = new Point(20, 50 * i);
-                timetable_names[i].Width = 100;
+                timetable_names[i].Location = new Point(0, 50 * i);
+                timetable_names[i].Width = 250;
                 timetable_names[i].Visible = true;
                 timetable_names[i].Text = timetablelist[i].name;
                 Controls["timetables"].Controls.Add(timetable_names[i]);
@@ -62,7 +62,7 @@ namespace test_project
                     Button _sender = (Button)sender;
                     //Export_timetable?.Invoke((string)_sender.Tag);
                 };
-                export_buttons[i].Location = new Point(180, 50 * i);
+                export_buttons[i].Location = new Point(300, 50 * i);
                 export_buttons[i].Width = 80;
                 export_buttons[i].Visible = true;
                 export_buttons[i].Text = "Экспорт";
@@ -75,7 +75,7 @@ namespace test_project
                     Button _sender = (Button)sender;
                     Show_edit_timetable?.Invoke((string)_sender.Tag);
                 };
-                edit_buttons[i].Location = new Point(280, 50 * i);
+                edit_buttons[i].Location = new Point(400, 50 * i);
                 edit_buttons[i].Width = 80;
                 edit_buttons[i].Visible = true;
                 edit_buttons[i].Text = "Изменить";
@@ -88,7 +88,7 @@ namespace test_project
                     Button _sender = (Button)sender;
                     Remove_timetable?.Invoke((string)_sender.Tag);
                 };
-                remove_buttons[i].Location = new Point(380, 50 * i);
+                remove_buttons[i].Location = new Point(500, 50 * i);
                 remove_buttons[i].Width = 80;
                 remove_buttons[i].Visible = true;
                 remove_buttons[i].Text = "Удалить";

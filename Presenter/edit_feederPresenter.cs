@@ -4,7 +4,6 @@ using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
 namespace Presenter
 {
     public class edit_feederPresenter
@@ -39,6 +38,7 @@ namespace Presenter
             feeder.Timetable_id = timetable_id;
             string cond = "feeder_id = '" + current_feeder_id + "'";
             _feederrepository.Update(feeder, cond);
+            _view.UdpateSim();
         }
 
         private void Show_goback()

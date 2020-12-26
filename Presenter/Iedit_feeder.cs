@@ -12,5 +12,6 @@ namespace Presenter
 
         void Load_existing_data(List<Timetable> lists, string name, string timetable_id);
         void Display_save_result(short save_result);
+        void UdpateSim();
     }
 }

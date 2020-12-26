@@ -1,5 +1,6 @@
 ﻿using Model.Entity;
 using Presenter;
+using Sim;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -79,6 +80,11 @@ namespace test_project
                     MessageBox.Show("Имя кормушки не может быть пустым.");
                     break;
             }
+        }
+
+        public void UdpateSim()
+        {
+            TestSim.Refresh();
         }
     }
 }
