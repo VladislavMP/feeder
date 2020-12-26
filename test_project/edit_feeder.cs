@@ -49,7 +49,9 @@ namespace test_project
         public void Load_existing_data(List<Timetable> timetablelist, string name, string timetable_id)
         {
             feeder_name_txtbx.Text = name;
-            int size = timetablelist.Count;
+            int size = 0;
+            if (timetablelist != null)
+            size = timetablelist.Count;
             int i;
             
 

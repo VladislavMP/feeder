@@ -4,10 +4,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "View", "test_project\View.csproj", "{E8971952-9715-4688-AA67-61F09874C631}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1B8DB85D-1CB9-48E5-8905-53CB0FA1981A} = {1B8DB85D-1CB9-48E5-8905-53CB0FA1981A}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presenter", "Presenter\Presenter.csproj", "{273E4CC1-2B5A-44AD-86E9-0BB96325197F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presenter", "Presenter\Presenter.csproj", "{273E4CC1-2B5A-44AD-86E9-0BB96325197F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{6CBE48B1-D93A-4125-9EC2-A335B6772329}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{6CBE48B1-D93A-4125-9EC2-A335B6772329}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sim", "Sim\Sim.csproj", "{1B8DB85D-1CB9-48E5-8905-53CB0FA1981A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +32,10 @@ Global
 		{6CBE48B1-D93A-4125-9EC2-A335B6772329}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CBE48B1-D93A-4125-9EC2-A335B6772329}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CBE48B1-D93A-4125-9EC2-A335B6772329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B8DB85D-1CB9-48E5-8905-53CB0FA1981A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B8DB85D-1CB9-48E5-8905-53CB0FA1981A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B8DB85D-1CB9-48E5-8905-53CB0FA1981A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B8DB85D-1CB9-48E5-8905-53CB0FA1981A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -99,10 +99,10 @@ namespace Model.Repository
             {
                 foreach (DataRow row in table.Rows)
                 {
-                    var cells = row.ItemArray;
+                    var cells_in = row.ItemArray;
                     Time time = new Time("1");
-                    time.Id = (int)cells[0];
-                    time.TimeHMS = cells[1].ToString();
+                    time.Id = (int)cells_in[0];
+                    time.TimeHMS = cells_in[1].ToString();
                     TimeOfFeed.Add(time);
                 }
             }
@@ -137,7 +137,7 @@ namespace Model.Repository
                         {
                             var cells_in = row_in.ItemArray;
                             Time time = new Time("1");
-                            time.Id = (int)cells[0];
+                            time.Id = (int)cells_in[0];
                             time.TimeHMS = cells_in[1].ToString();
                             TimeOfFeed.Add(time);
                         }

@@ -10,6 +10,8 @@ using Model.Service;
 using Ninject;
 using Presenter;
 using System.Threading;
+using Sim; 
+
 namespace test_project
 {
     static class Program
