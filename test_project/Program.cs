@@ -50,8 +50,11 @@ namespace test_project
             TestSim.Refresh();
             Thread myThread = new Thread(new ThreadStart(TestSim.Sim));
             myThread.Start();
+            StatisticsService S = new StatisticsService();
+            S.Get();
             kernel.Get<loginPresenter>().Run();
             Application.Run(kernel.Get<ApplicationContext>());
+  
         }
 
     }
