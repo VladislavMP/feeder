@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data;
 /*
-
             MySqlConnection conn = new MySqlConnection("server=localhost;user=root;password=root;database=feeder_db;");
             conn.Open();
             MySqlCommand command = new MySqlCommand("SELECT user_id FROM users WHERE user_type = 1", conn);

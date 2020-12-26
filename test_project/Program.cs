@@ -9,7 +9,7 @@ using Model.Repository;
 using Model.Service;
 using Ninject;
 using Presenter;
-
+using System.Threading;
 namespace test_project
 {
     static class Program
@@ -44,9 +44,12 @@ namespace test_project
             //Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            TestSim.Refresh();
+            Thread myThread = new Thread(new ThreadStart(TestSim.Sim));
+            myThread.Start();
             kernel.Get<loginPresenter>().Run();
             Application.Run(kernel.Get<ApplicationContext>());
         }
+
     }
 }
