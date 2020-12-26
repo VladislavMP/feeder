@@ -12,5 +12,6 @@ namespace Presenter
         public event Action<string> Remove_timetable;
         public event Action Add_timetable;
         void display_timetable_list(List<Timetable> timetablelist);
+        void UpdateSim();
     }
 }

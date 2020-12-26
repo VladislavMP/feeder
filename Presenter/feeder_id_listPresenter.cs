@@ -49,6 +49,7 @@ namespace Presenter
                 _feederrepository.Remove(_feederrepository.Get(feeder_id));
                 GLOBAL_feederlist = _feederrepository.GetAll();
                 _view.display_GLOBAL_feeder_list(GLOBAL_feederlist);
+                _view.UpdateSim();
             }
         }
 

@@ -30,7 +30,6 @@
         {
             this.feeder_info_label = new System.Windows.Forms.Label();
             this.back_btn = new System.Windows.Forms.Button();
-            this.check_logs_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // feeder_info_label
@@ -53,21 +52,11 @@
             this.back_btn.UseVisualStyleBackColor = true;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
-            // check_logs_btn
-            // 
-            this.check_logs_btn.Location = new System.Drawing.Point(599, 388);
-            this.check_logs_btn.Name = "check_logs_btn";
-            this.check_logs_btn.Size = new System.Drawing.Size(159, 29);
-            this.check_logs_btn.TabIndex = 2;
-            this.check_logs_btn.Text = "Просмотреть логи";
-            this.check_logs_btn.UseVisualStyleBackColor = true;
-            // 
             // feeder_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.check_logs_btn);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.feeder_info_label);
             this.Name = "feeder_info";
@@ -82,6 +71,5 @@
 
         private System.Windows.Forms.Label feeder_info_label;
         private System.Windows.Forms.Button back_btn;
-        private System.Windows.Forms.Button check_logs_btn;
     }
 }

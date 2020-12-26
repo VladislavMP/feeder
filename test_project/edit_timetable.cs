@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Model.Entity;
 using Presenter;
+using Sim;
 
 namespace test_project
 {
@@ -111,6 +112,11 @@ namespace test_project
                     MessageBox.Show("Допущена ошибка в формате времени. Используйте формат 'HH:MM' , где HH — часы, а MM — минуты.");
                     break;
             }
+        }
+
+        public void UpdateSim()
+        {
+            TestSim.Refresh();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Model.Entity;
 using Presenter;
+using Sim;
 
 namespace test_project
 {
@@ -55,7 +56,7 @@ namespace test_project
                 timetable_names[i].Text = timetablelist[i].name;
                 Controls["timetables"].Controls.Add(timetable_names[i]);
 
-                export_buttons.Add(new Button());
+                /*export_buttons.Add(new Button());
                 export_buttons[i].Tag = timetablelist[i].TimetableId;
                 export_buttons[i].Click += (sender, e) =>
                 {
@@ -66,7 +67,7 @@ namespace test_project
                 export_buttons[i].Width = 80;
                 export_buttons[i].Visible = true;
                 export_buttons[i].Text = "Экспорт";
-                Controls["timetables"].Controls.Add(export_buttons[i]);
+                Controls["timetables"].Controls.Add(export_buttons[i]);*/
 
                 edit_buttons.Add(new Button());
                 edit_buttons[i].Tag = timetablelist[i].TimetableId;
@@ -106,6 +107,11 @@ namespace test_project
         private void timetables_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public void UpdateSim()
+        {
+            TestSim.Refresh();
         }
     }
 }

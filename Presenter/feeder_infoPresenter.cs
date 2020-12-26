@@ -54,8 +54,11 @@ namespace Presenter
             _view.Show();
             Feeder feeder = _feederrepository.Get(feeder_id);
             Timetable timetable = _timetablerepository.Get(feeder.Timetable_id);
-            string timetable_name = timetable.name;
+            string timetable_name;
             if (timetable == null) timetable_name = "-//-";
+            else
+            timetable_name = timetable.name;
+            
             _view.Display_info(feeder.Name, feeder.Feeder_id, timetable_name);
         }
     }

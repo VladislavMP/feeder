@@ -44,6 +44,7 @@ namespace Presenter
             
             timetablelist = _timetablerepository.GetList(current_user_id);
             _view.display_timetable_list(timetablelist);
+            _view.UpdateSim();
         }
 
         private void Show_edit_timetable(string timetable_id)

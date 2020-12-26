@@ -13,5 +13,6 @@ namespace Presenter
         void display_timestamp_list(List<Time> timestamps);
         void load_timetable_name(string name);
         void display_save_timetable_response(short save_timetable_response);
+        void UpdateSim();
     }
 }

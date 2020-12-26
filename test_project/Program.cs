@@ -35,6 +35,7 @@ namespace test_project
             kernel.Bind<Ireg_screen>().To<reg_screen>();
             kernel.Bind<Ifeeder_id_list>().To<feeder_id_list>();
             kernel.Bind<Ifeeder_info>().To<feeder_info>();
+            kernel.Bind<Istats>().To<stats>();
 
             kernel.Bind<IFeederService>().To<FeederService>();
             kernel.Bind<IAuthService>().To<AuthService>();

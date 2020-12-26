@@ -18,7 +18,11 @@ namespace Model.Service
             DataTable table = new DataTable();
             table = DataBase.GetAll("statistics");
             var cell = table.Rows[0].ItemArray;
-            Statistics.feeding_counter = (int)cell[0];
+            Statistics.feeding_counter = (int)cell[1];
+        }
+        public int GetStats()
+        {
+            return Statistics.feeding_counter;
         }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.back_btn = new System.Windows.Forms.Button();
-            this.import_btn = new System.Windows.Forms.Button();
             this.timetables = new System.Windows.Forms.Panel();
             this.add_timetable_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,15 +43,6 @@
             this.back_btn.UseVisualStyleBackColor = true;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
-            // import_btn
-            // 
-            this.import_btn.Location = new System.Drawing.Point(663, 386);
-            this.import_btn.Name = "import_btn";
-            this.import_btn.Size = new System.Drawing.Size(94, 29);
-            this.import_btn.TabIndex = 2;
-            this.import_btn.Text = "Импорт";
-            this.import_btn.UseVisualStyleBackColor = true;
-            // 
             // timetables
             // 
             this.timetables.AutoScroll = true;
@@ -64,7 +54,7 @@
             // 
             // add_timetable_btn
             // 
-            this.add_timetable_btn.Location = new System.Drawing.Point(523, 386);
+            this.add_timetable_btn.Location = new System.Drawing.Point(663, 386);
             this.add_timetable_btn.Name = "add_timetable_btn";
             this.add_timetable_btn.Size = new System.Drawing.Size(94, 29);
             this.add_timetable_btn.TabIndex = 4;
@@ -79,7 +69,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.add_timetable_btn);
             this.Controls.Add(this.timetables);
-            this.Controls.Add(this.import_btn);
             this.Controls.Add(this.back_btn);
             this.Name = "manage_timetables";
             this.Text = "manage_timetables";
@@ -90,7 +79,6 @@
 
         #endregion
         private System.Windows.Forms.Button back_btn;
-        private System.Windows.Forms.Button import_btn;
         private System.Windows.Forms.Panel timetables;
         private System.Windows.Forms.Button add_timetable_btn;
     }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Model.Entity;
 using Presenter;
+using Sim;
 
 namespace test_project
 {
@@ -103,6 +104,11 @@ namespace test_project
                 feeder_owners[i].Text = GLOBAL_feederlist[i].User_id;
                 Controls["feeder_ids"].Controls.Add(feeder_owners[i]);
             }
+        }
+
+        public void UpdateSim()
+        {
+            TestSim.Refresh();
         }
     }
 }

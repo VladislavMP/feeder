@@ -35,6 +35,7 @@ namespace Presenter
             //сохранить!!!
             _view.display_save_timetable_response(save_timetable_response);
             if (save_timetable_response != 0) return;
+            _view.UpdateSim();
             var presenter = _kernel.Get<manage_timetablesPresenter>();
             presenter.Run(current_user);
             _view.Close();

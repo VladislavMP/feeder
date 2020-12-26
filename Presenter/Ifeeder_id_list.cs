@@ -13,5 +13,6 @@ namespace Presenter
         public event Action<string> Show_feeder_info;
 
         void display_GLOBAL_feeder_list(List<Feeder> gLOBAL_feederlist);
+        void UpdateSim();
     }
 }
